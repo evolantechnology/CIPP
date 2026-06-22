@@ -25,6 +25,10 @@ jobs:
           yarn install --prefer-offline
           yarn run build
           cp staticwebapp.config.json out/
+          echo "=== Root files in out/ ==="
+          ls -la out/*.html || echo "No .html files at root of out/"
+          echo "=== Full listing of out/ ==="
+          ls -la out/
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
